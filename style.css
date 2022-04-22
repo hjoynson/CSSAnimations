@@ -51,8 +51,8 @@ animation-iteration-count: infinite;
 
 .heart{
 display:inline-block;
-width: 300px; 
-height: 350px;
+width: 200px; 
+height: 250px;
 aspect-ratio: 1;
 border-image: radial-gradient(red 69%,#0000 70%) 84.5% fill/100%;
 clip-path: polygon(-41% 0,50% 91%, 141% 0);
@@ -77,6 +77,53 @@ transform: translate(-50%, -50%);
     transition-timing-function: ease;
 
 }
+
+
+.star-five {
+    margin: 50px 0;
+    position: relative;
+    display: block;
+    color: red;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+    animation-name: starrotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+  .star-five:before {
+    border-bottom: 80px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+    animation-name: starrotate;
+  }
+  .star-five:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+    animation-name: starrotate;
+  }
 
 @keyframes button{
 
@@ -112,17 +159,30 @@ transform: translate(-50%, -50%);
     0%{
         background-color:#ff9900;
         box-shadow: 6px 6px 0 darkslategray;
-        border-radius: 50%;
+        border-radius: 50% ;
+     
     }
 
 50% {
     background-color:#ff9900;
-    box-shadow: 6px 6px 0 darkslategray; 
+    box-shadow: 6px 6px 0 darkslategray;
+   
 } 
 100% {
     transition: 4s;
     background-color: whitesmoke;
     box-shadow: 6px 6px darkmagenta;
+   
 }
 
+}
+
+@keyframes starrotate{
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+star-five{
+   animation: rotate 4s linear infinite;
 }
