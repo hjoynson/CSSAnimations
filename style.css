@@ -49,36 +49,6 @@ animation-iteration-count: infinite;
     transition-timing-function: ease;
 }
 
-.heart{
-display:inline-block;
-width: 200px; 
-height: 250px;
-aspect-ratio: 1;
-border-image: radial-gradient(red 69%,#0000 70%) 84.5% fill/100%;
-clip-path: polygon(-41% 0,50% 91%, 141% 0);
-position: relative;
-background-color: teal;
-animation-name: fade;
-animation-duration: 5s;
-animation-iteration-count: infinite;
-animation-timing-function: linear; 
-
-}
-.center{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-
- }
-
-.heart:hover{
-    transform: rotate(90deg);
-    transition-timing-function: ease;
-
-}
-
-
 .star-five {
     margin: 50px 0;
     position: relative;
@@ -94,6 +64,9 @@ transform: translate(-50%, -50%);
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear; 
+    bottom: 15%;
+    position: absolute;
+
   }
   .star-five:before {
     border-bottom: 80px solid red;
@@ -123,6 +96,61 @@ transform: translate(-50%, -50%);
     transform: rotate(-70deg);
     content: '';
     animation-name: starrotate;
+  }
+
+
+  .heart-shape{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: rgba(250,184,66, 1);
+    animation-iteration-count: infinite;
+  }
+  .heart-shape:before,
+  .heart-shape:after{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    content: '';
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgba(250,184,66, 1);
+  }
+  .heart-shape:before{
+    bottom: 0px;
+    left: -100px;
+  }
+  .heart-shape:after{
+    top: -100px;
+    right: 0px;
+  }
+
+.heart-shape{
+    bottom: 15%;
+    position: absolute;
+    -moz-background-clip: ;
+    -moz-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration:5s;
+  }
+  @-webkit-keyframes run {
+    0% {
+      left: 0;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+
+      left: 0;    
+    }
   }
 
 @keyframes button{
@@ -155,27 +183,6 @@ transform: translate(-50%, -50%);
     }
 }
 
-@keyframes fade {
-    0%{
-        background-color:#ff9900;
-        box-shadow: 6px 6px 0 darkslategray;
-        border-radius: 50% ;
-     
-    }
-
-50% {
-    background-color:#ff9900;
-    box-shadow: 6px 6px 0 darkslategray;
-   
-} 
-100% {
-    transition: 4s;
-    background-color: whitesmoke;
-    box-shadow: 6px 6px darkmagenta;
-   
-}
-
-}
 
 @keyframes starrotate{
     100% {
