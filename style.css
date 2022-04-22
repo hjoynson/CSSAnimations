@@ -1,7 +1,7 @@
 .square {
     width: 300px;
     height: 300px;
-    background-color: red;
+    background-color: #cc0066;
     transition: border-radius 2s;
     transition-timing-function: ease;
     animation-iteration-count: infinite;
@@ -49,6 +49,35 @@ animation-iteration-count: infinite;
     transition-timing-function: ease;
 }
 
+.heart{
+display:inline-block;
+width: 300px; 
+height: 350px;
+aspect-ratio: 1;
+border-image: radial-gradient(red 69%,#0000 70%) 84.5% fill/100%;
+clip-path: polygon(-41% 0,50% 91%, 141% 0);
+position: relative;
+background-color: teal;
+animation-name: fade;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-timing-function: linear; 
+
+}
+.center{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+ }
+
+.heart:hover{
+    transform: rotate(90deg);
+    transition-timing-function: ease;
+
+}
+
 @keyframes button{
 
     0%{
@@ -77,4 +106,23 @@ animation-iteration-count: infinite;
     to {
         transform:rotate(360deg);
     }
+}
+
+@keyframes fade {
+    0%{
+        background-color:#ff9900;
+        box-shadow: 6px 6px 0 darkslategray;
+        border-radius: 50%;
+    }
+
+50% {
+    background-color:#ff9900;
+    box-shadow: 6px 6px 0 darkslategray; 
+} 
+100% {
+    transition: 4s;
+    background-color: whitesmoke;
+    box-shadow: 6px 6px darkmagenta;
+}
+
 }
