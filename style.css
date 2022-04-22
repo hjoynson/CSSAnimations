@@ -5,12 +5,13 @@
     transition: border-radius 2s;
     transition-timing-function: ease;
     animation-iteration-count: infinite;
-    animation-name: button;
+    animation-name: square;
 }
 
 .square:hover{
     border-radius:50%;
     animation-iteration-count: infinite;
+    animation-name: square;
 }
 .rectangle{
 width: 500px;
@@ -24,6 +25,28 @@ animation-iteration-count: infinite;
 .rectangle:hover{
     border-radius:50% ;
     animation-iteration-count: infinite;
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border: 150px solid transparent;
+    border-top: 0;
+    border-bottom: 300px solid yellowgreen;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    /* transform: rotate(3deg); */
+     /* transform: rotate(0.3rad);/ */
+     /* transform: rotate(3grad); */ 
+     /* transform: rotate(.03turn);  */
+  }
+
+
+.triangle:hover{
+    transform: rotate(90deg);
+    transition-timing-function: ease;
 }
 
 @keyframes button{
@@ -44,4 +67,14 @@ animation-iteration-count: infinite;
    
 
 }
+
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
