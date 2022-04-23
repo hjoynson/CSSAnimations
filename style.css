@@ -135,12 +135,13 @@ animation-iteration-count: infinite;
 .heart-shape{
     bottom: 15%;
     position: absolute;
-    -moz-background-clip: ;
-    -moz-animation: linear infinite;
-    -webkit-animation-name: run;
-    -webkit-animation-duration:5s;
+   
+    animation: linear infinite alternate;
+    animation-name: run;
+    animation-duration: 5s;
   }
-  @-webkit-keyframes run {
+
+  @keyframes run {
     0% {
       left: 0;
     }
